@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'node:hashicorp/terraform:light'
+        docker { image 'hashicorp/terraform:light'
         }
     }
 
