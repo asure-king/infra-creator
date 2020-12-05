@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'hashicorp/terraform' }
-    }
+    agent any
     options {disableConcurrentBuilds()}
     environment {
         GOOGLE_PROJECT_ID = "asure-terraformar-273003" 
@@ -32,7 +30,7 @@ pipeline {
                     extensions: [[$class: 'CleanCheckout']], 
                     submoduleCfg: [], 
                     userRemoteConfigs: [
-                        [url: 'https://github.com/asure-king/infra-creator.git', credentialsId: '']
+                        [url: 'https://github.com/agustinjaume/jenkins-terraform.git', credentialsId: '']
                         ]])
                 sh 'pwd' 
                 sh 'ls -l'
