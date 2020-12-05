@@ -1,5 +1,5 @@
 pipeline {
-    agent{label 'kubernetes'}  
+    agent{label 'terraform'}  
 
     environment {
         SA_INFRA = credentials('sa_infra')
