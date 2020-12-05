@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'hashicorp/terraform:light' }
-    }  
+    agent any
 
     environment {
         SA_INFRA = credentials('sa_infra')
