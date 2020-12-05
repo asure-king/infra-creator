@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'hashicorp/terraform' }
+    }
     options {disableConcurrentBuilds()}
     environment {
         GOOGLE_PROJECT_ID = "asure-terraformar-273003" 
