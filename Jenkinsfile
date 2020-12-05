@@ -1,5 +1,5 @@
 pipeline {
-    agent kubernetes
+    agent any
 
     environment {
         SA_INFRA = credentials('sa_infra')
