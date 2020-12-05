@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent docker 
 
     environment {
         SA_INFRA = credentials('sa_infra')
