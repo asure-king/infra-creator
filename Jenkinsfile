@@ -1,5 +1,5 @@
 pipeline {
-    agent docker 
+    agent kubernetes 
 
     environment {
         SA_INFRA = credentials('sa_infra')
