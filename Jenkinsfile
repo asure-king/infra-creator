@@ -25,7 +25,7 @@ pipeline {
             steps {
                 cleanWs()
                     checkout([$class: 'GitSCM', 
-                    branches: [[name: '*/dev']], 
+                    branches: [[name: '*/master']], 
                     doGenerateSubmoduleConfigurations: false, 
                     extensions: [[$class: 'CleanCheckout']], 
                     submoduleCfg: [], 
