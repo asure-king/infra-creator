@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        kubernetes { container: 'terraform'}
-    }
+    agent any
 
     environment {
         SA_INFRA = credentials('sa_infra')
