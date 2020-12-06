@@ -3,8 +3,8 @@ pipeline {
         docker { image 'hashicorp/terraform:light'}
     }
     environment {
-        SA_INFRA = credentials('sa_infra')
-    }
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('GOOGLE_APPLICATION_CREDENTIALS')
+
 
     stages {
         stage('checkout') {
