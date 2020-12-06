@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('GOOGLE_APPLICATION_CREDENTIALS')
-
+    }
 
     stages {
         stage('checkout') {
@@ -19,5 +19,5 @@ pipeline {
                 sh 'terraform init'
             }
         }
-    }
-}   
+    } 
+}  
