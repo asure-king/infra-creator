@@ -22,7 +22,6 @@ pipeline {
                 sh 'terraform plan -out myplan'
             }
         }
-    }
 
         stage('Approval') {
             steps {
@@ -37,6 +36,4 @@ pipeline {
                 sh 'terraform apply -input=false myplan'
                  }
              }
-         }
-    }
 }
