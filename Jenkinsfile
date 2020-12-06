@@ -1,5 +1,7 @@
 pipeline {
-    agent docker
+    agent {
+    docker { image 'node:hashicorp/terraform' }
+    }
     environment {
         SA_INFRA = credentials('sa_infra')
     }
