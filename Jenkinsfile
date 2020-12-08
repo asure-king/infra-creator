@@ -9,12 +9,13 @@ pipeline {
             steps {
                 sh 'mkdir -p creds'
                 sh 'cd /home/bz/workspace/infra-creator'
-                sh 'echo $GOOGLE_APLICATIONS_CREDENTIALS2 | base64 -d > ./creds/infra-creator.json'
+                sh 'echo directorio cambiado'
+                sh 'terraform init'
             }
         }
         stage ('tf init') {
             steps {
-                sh 'terraform init'
+                sh 'echo Terraform iniciado'
             }
         }
     } 
