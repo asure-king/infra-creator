@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker { image 'hashicorp/terraform:light'}
-    }
+    agent { label 'asure-hq'}
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('GOOGLE_APPLICATION_CREDENTIALS')
     }
@@ -10,13 +8,14 @@ pipeline {
         stage('checkout') {
             steps {
                 sh 'mkdir -p creds'
-                sh 'echo $SA_INFRA | base64 -d > ./creds/infra-creator.json'
+                sh 'echo $GOOGLE_APLICATIONS_CREDENTIALS | base64 -d > ./creds/infra-creator.json'
             }
         }
         stage ('tf init') {
             steps {
-                withDockerContainer(image: 'hashicorp/terraform:light', toolName: 'Docker')
                 sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform plan'
             }
         }
     } 
